@@ -11,6 +11,9 @@ server.use(helmet());
 server.use(cors());
 server.use(express.json());
 
+server.use('/', () => {
+    return "hello heroku";
+})
 server.use('/api/auth', authRouter);
 server.use('/api/items', itemRouter);
 
