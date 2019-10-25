@@ -24,3 +24,5 @@ router.post('/new', restricted, (req, res) => {
             res.status(500).json({message: 'item could not be added', error: error});
         })
 })
+
+module.exports = router;
