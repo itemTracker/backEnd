@@ -14,4 +14,8 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/items', itemRouter);
 
+server.get("/", (req, res) => {
+    res.send({Success: "api working..."})
+})
+
 module.exports = server;

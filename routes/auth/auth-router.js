@@ -6,6 +6,7 @@ const Users = require('./auth-model.js');
 
 
 router.post('/register', async (req, res) => {
+    console.log(req.body);
     try {
         // set request body to user.
         let user = req.body;
@@ -24,7 +25,7 @@ router.post('/register', async (req, res) => {
             res.status(401).json({ message: 'error adding user'});
         }
     } catch (error) {
-        res.status(500).json({ message: 'could not add user'});
+        res.status(500).json({ message: 'could not add user', error: error.message});
     }
 })
 

@@ -15,7 +15,7 @@ exports.up = function(knex) {
       series.increments();
       series.string('name')
             .notNullable()
-            unique();
+            .unique();
   })
 
   .createTable('type', type => {
